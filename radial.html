@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>径向渐变</title>
+</head>
+<body>
+        <!-- 径向渐变,需要写在def标签里面 -->
+        <svg width="600" height="600">
+            <defs>
+                <radialGradient id="one">
+                    <stop offset="0%" stop-color="skyblue" stop-opacity="0.5"></stop>
+                    <stop offset="50%" stop-color="blue" stop-opacity="0.5"></stop>
+                    <stop offset="100%" stop-color="purple" stop-opacity="0.5"></stop>
+                </radialGradient>
+                <radialGradient id="two" cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+                    <!-- 渐变方向中心点,c表示中心点，f表示焦点 -->
+                    <stop offset="0%" stop-color="skyblue" stop-opacity="0.5"></stop>
+                    <stop offset="50%" stop-color="blue" stop-opacity="0.5"></stop>
+                    <stop offset="100%" stop-color="purple" stop-opacity="0.5"></stop>
+                </radialGradient>
+            </defs>
+
+            <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#one)"></rect>
+
+            <rect x="130" y="10" rx="15" ry="15" width="100" height="100" fill="url(#two)"></rect>
+        </svg>
+</body>
+</html>

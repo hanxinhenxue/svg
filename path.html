@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- path中命令大写表示绝对路径，小写表示相对于上个点移动的距离 -->
+    <!-- 
+        M: 移动到某个点，一般用于开始的时候，需要两个参数
+        L: 画线，需要两个参数,
+        H:  画水平线，需要一个参数
+        V： 画垂直线，需要一个参数
+        Z：闭合
+
+        C: 三次贝塞尔曲线，三个参数，第一个是起点的控制点，第二个是终点的控制点，第三个是终点
+        S：两个参数，第一个是控制点，第二个是终点。 S命令可以用来创建与前面一样的贝塞尔曲线，但是，如果S命令跟在一个C或S命令后面，则它的第一个控制点会被假设成前一个命令曲线的第二个控制点的中心对称点。如果S命令单独使用，前面没有C或S命令，那当前点将作为第一个控制点
+
+        Q：二次贝塞尔曲线，两个参数，第一个是控制点，第二个是终点
+        T：T，同S，一个参数，延长线的控制点
+
+        A：曲线、弧线。七个参数，x轴半径、y轴半径、弧形旋转（度数）、角度大小（0表示小于180,1表示大于）、弧线方向（0表示逆时针，1表示顺时针）、弧线终点x、弧线终点y
+     -->
+    <svg width="600" height="600">
+        <path d="M10 10 H 90 V 90 H 10 Z" fill="yellow" stroke="yellow" />
+        <path d="M100 10 h 80 v 80 h -80 Z" fill="skyblue" stroke="skyblue" />
+        <path d="M10 10 C 20 20, 40 20, 90 50" stroke="black" fill="transparent" />
+    </svg>
+</body>
+</html>
